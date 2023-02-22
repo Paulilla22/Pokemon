@@ -67,19 +67,30 @@ def anadir():
         cant="0"
         mipoke=Pokemon(nom,locali,tip,evolu,nive,cant)
     pokedex.append(mipoke)
+def busca():
+    busca=input("¿Qué pokemon busca? ")
+    for recorre in range (0,len(pokedex)):
+        if recorre==busca:
+            return pokedex.index(recorre)
+            
+        
+        
 def info():
     busca=input("Qué pokemon busca? ")
+    
     if busca in pokedex:
-        if pokedex[busca].get_cantidad()=="1":
-            print (pokedex[busca].get_elemento)
-        elif pokedex[busca].get_cantidad()=="2":
-            print(pokedex[busca].get_elemento)
-            print(pokedex[busca].get_secundario)
-    print(pokedex[busca].get_nombre())
-    print(pokedex[busca].get_localizacion())
-    print(pokedex[busca].get_tipo())
-    print(pokedex[busca].get_evolucion())
-    print(pokedex[busca].get_nivel())
+        if pokedex[posi].get_cantidad()=="1":
+            print (pokedex[posi].get_elemento())
+        elif pokedex[posi].get_cantidad()=="2":
+            print(pokedex[posi].get_elemento())
+            print(pokedex[posi].get_secundario())
+        print(pokedex[posi].get_nombre())
+        print(pokedex[posi].get_localizacion())
+        print(pokedex[posi].get_tipo())
+        print(pokedex[posi].get_evolucion())
+        print(pokedex[posi].get_nivel())
+    else:
+        print("Este pokemon no está registrado en la pokedex.")
 if __name__=="__main__":
     pokedex=[]
     respuesta="poke"
