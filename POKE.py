@@ -90,13 +90,15 @@ class Elementop(Pokemon):
         self.__elemento=ele
     def get_elemento(self):
         return self.__elemento
+    
+    
 class Elementos(Elementop):
-     def __init__(self,sele,ele,nom,locali,tip,evolu,nive,cant):
+    def __init__(self,sele,ele,nom,locali,tip,evolu,nive,cant):
         super().__init__(ele,nom,locali,tip,evolu,nive,cant)
         self.__secundario=sele
-     def set_secundario(self,sele):
+    def set_secundario(self,sele):
         self.__secundario=sele
-     def get_secundario(self):
+    def get_secundario(self):
         return self.__secundario
 
 
@@ -106,7 +108,7 @@ def agregar_pokemon():
     tip = input("Tipo: ")
     evolu = input("Nivel de evolución: ")
     nive = input("Nivel: ")
-    elemento = input("¿Tiene un elemento específico? ¿si o no?")
+    elemento = input("¿Tiene un elemento específico? ¿si o no? ")
 
     if elemento.lower() == "si" or elemento.lower() == "sí":
         ele = input("Elemento principal: ")
@@ -132,10 +134,11 @@ def mostrar_pokemon():
         print("Tipo:", pokemon.get_tipo())
         print("Evolución:", pokemon.get_evolucion())
         print("Nivel:", pokemon.get_nivel())
-        if pokemon.get_cantidad() == '1':
+        if pokemon.get_cantidad() == "1":
             print("Elemento:", pokemon.get_elemento())
-            if pokemon.get_cantidad() == '2':
-                print("Elemento secundario:", pokemon.get_secundario())
+        elif pokemon.get_cantidad() == "2":
+            print("Elemento:", pokemon.get_elemento())
+            print("Elemento secundario:", pokemon.get_secundario())
 
         print("------------------------------")
         
@@ -150,20 +153,24 @@ def buscador():
             print("Tipo:", pokemon.get_tipo())
             print("Evolución:", pokemon.get_evolucion())
             print("Nivel:", pokemon.get_nivel())
-            if pokemon.get_cantidad() == '1':
+            if pokemon.get_cantidad() == "1":
                 print("Elemento:", pokemon.get_elemento())
-                if pokemon.get_cantidad() == '2':
-                    print("Elemento secundario:", pokemon.get_secundario())
+            elif pokemon.get_cantidad() == "2":
+                print("Elemento:", pokemon.get_elemento())
+                print("Elemento secundario:", pokemon.get_secundario())
+            break
         else:
             print("Pokemon no encontrado en la pokedex.")
     print("------------------------------")      
         
 def eliminar():
     nombre_pokemon = input("Ingrese el nombre del pokemon que desea eliminar: ")
+    #poner excepción para que solo imprima "Pokemon no encontrado" cuando no esté en la lista
     for pokemon in pokedex:
         if pokemon.get_nombre() == nombre_pokemon:
             pokedex.remove(pokemon)
             print('Pokemon eliminado')
+            break
         else:
             print("Pokemon no encontrado en la pokedex.")
     print("------------------------------")
