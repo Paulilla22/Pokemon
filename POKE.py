@@ -146,8 +146,10 @@ def mostrar_pokemon():
     
 def buscador():
     nombre_pokemon = input("Ingrese el nombre del pokemon que desea buscar: ")
+    comprobar=False
     for pokemon in pokedex:
         if pokemon.get_nombre() == nombre_pokemon:
+            comprobar=True
             print("Nombre:", pokemon.get_nombre())
             print("Localización:", pokemon.get_localizacion())
             print("Tipo:", pokemon.get_tipo())
@@ -159,20 +161,21 @@ def buscador():
                 print("Elemento:", pokemon.get_elemento())
                 print("Elemento secundario:", pokemon.get_secundario())
             break
-        else:
-            print("Pokemon no encontrado en la pokedex.")
+    if comprobar==False:
+        print("Pokemon no encontrado en la pokedex.")
     print("------------------------------")      
         
 def eliminar():
     nombre_pokemon = input("Ingrese el nombre del pokemon que desea eliminar: ")
-    #poner excepción para que solo imprima "Pokemon no encontrado" cuando no esté en la lista
+    comprobar=False
     for pokemon in pokedex:
         if pokemon.get_nombre() == nombre_pokemon:
+            comprobar=True
             pokedex.remove(pokemon)
             print('Pokemon eliminado')
             break
-        else:
-            print("Pokemon no encontrado en la pokedex.")
+    if comprobar==False:
+        print("Pokemon no encontrado en la pokedex.")
     print("------------------------------")
         
         
