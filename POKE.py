@@ -177,17 +177,47 @@ def eliminar():
     if comprobar==False:
         print("Pokemon no encontrado en la pokedex.")
     print("------------------------------")
+    
+def modificar():
+    nombre_pokemon = input("Ingrese el nombre del pokemon que desea modificar: ")
+    comprobar=False
+    for pokemon in pokedex:
+        if pokemon.get_nombre() == nombre_pokemon:
+            comprobar=True
+            cambio=input("Introduce la característica que desea modificar: ")
+            if cambio.lower=="nombre":
+                pokedex.remove(pokemon.get_nombre())
+                nom=input("Nombre nuevo: ")
+                pokemon.get_nombre()==nom
+                pokedex.append(pokemon.get_nombre())
+            elif cambio.lower=="localización":
+                p=0
+            elif cambio.lower=="tipo":
+                p=0
+            elif cambio.lower=="evolucion":
+                p=0
+            elif cambio.lower=="nivel":
+                p=0
+            elif cambio.lower=="elemento":
+                p=0
+            elif cambio.lower=="elemento secundario":
+                p=0
+            break
+    if comprobar==False:
+        print("Pokemon no encontrado en la pokedex.")
+    print("------------------------------") 
         
         
 if __name__=="__main__":
     pokedex=[]
     x="o"
-    while x!="5" :
+    while x!="6" :
          print("Si quiere añadir un pokemon pulse 1")
          print("Si quiere buscar la información de un pokemon pulse 2")
          print("Si quiere eliminar un pokemon pulse 3")
          print("Para ver todos mis pokemon pulse 4")
-         print("Para salir de la Pokedex pulse 5")
+         print("Para modificar los datos de algún pokemon pulse 5")
+         print("Para salir de la Pokedex pulse 6")
          x=input("Introduce: ")
          if x=="1":
              agregar_pokemon()
@@ -197,5 +227,7 @@ if __name__=="__main__":
              eliminar()
          elif x=="4":
              mostrar_pokemon()
+         elif x=="5":
+             modificar()
              
      
