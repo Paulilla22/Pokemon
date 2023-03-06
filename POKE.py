@@ -1,47 +1,3 @@
-'''def anadir():
-    nom = input("Nombre: ")
-    locali = input("Localización de captura: ")
-    tip = input("Tipo: ")
-    evolu = input("Nivel de evolución: ")
-    nive = input("Nivel: ")
-    elemento = input("¿Tiene un elemento específico? ¿si o no?")
-
-    if elemento.lower() == "si" or elemento.lower() == "sí":
-        ele = input("Elemento principal: ")
-        secu = input("¿Tiene más de un elemento específico? ¿si o no? ")
-        if secu.lower() == "si" or secu.lower() == "sí":
-            sele = input("Elemento secundario: ")
-            cant = "2"
-            mipoke = Elementos(sele, ele, nom, locali, tip, evolu, nive, cant)
-        else:
-            cant = "1"
-            mipoke = Elementop(ele, nom, locali, tip, evolu, nive, cant)
-    else:
-        cant = "0"
-        mipoke = Pokemon(nom, locali, tip, evolu, nive, cant)
-
-    pokedex.append(mipoke) # Agregar el nuevo objeto a la lista'''
-
-
-''' def info():
-    busca=input("Qué pokemon busca? ")
-    
-    if busca in pokedex:
-        if pokedex[posi].get_cantidad()=="1":
-            print (pokedex[posi].get_elemento())
-        elif pokedex[posi].get_cantidad()=="2":
-            print(pokedex[posi].get_elemento())
-            print(pokedex[posi].get_secundario())
-        print(pokedex[posi].get_nombre())
-        print(pokedex[posi].get_localizacion())
-        print(pokedex[posi].get_tipo())
-        print(pokedex[posi].get_evolucion())
-        print(pokedex[posi].get_nivel())
-    else:
-        print("Este pokemon no está registrado en la pokedex.")'''
-
-
-
 class Pokemon:
     def __init__(self,nom,locali,tip,evolu,nive,cant):
         self.__nombre=nom
@@ -185,23 +141,27 @@ def modificar():
         if pokemon.get_nombre() == nombre_pokemon:
             comprobar=True
             cambio=input("Introduce la característica que desea modificar: ")
-            if cambio.lower=="nombre":
-                pokedex.remove(pokemon.get_nombre())
+            if cambio.lower()=="nombre":
                 nom=input("Nombre nuevo: ")
-                pokemon.get_nombre()==nom
-                pokedex.append(pokemon.get_nombre())
-            elif cambio.lower=="localización":
-                p=0
-            elif cambio.lower=="tipo":
-                p=0
-            elif cambio.lower=="evolucion":
-                p=0
-            elif cambio.lower=="nivel":
-                p=0
-            elif cambio.lower=="elemento":
-                p=0
-            elif cambio.lower=="elemento secundario":
-                p=0
+                pokemon._nombre=nom
+            elif cambio.lower()=="localizacion":
+                locali=input("Localización nueva: ")
+                
+            elif cambio.lower()=="tipo":
+                tip=input("Tipo nuevo: ")
+                
+            elif cambio.lower()=="evolucion":
+                evolu=input("Evolución nueva: ")
+                
+            elif cambio.lower()=="nivel":
+                nive=input("Nivel nuevo: ")
+                
+            elif cambio.lower()=="elemento":
+                ele=input("Elemento nuevo: ")
+                
+            elif cambio.lower()=="elemento secundario":
+                sele=input("Elemento secundario nuevo: ")
+                
             break
     if comprobar==False:
         print("Pokemon no encontrado en la pokedex.")
