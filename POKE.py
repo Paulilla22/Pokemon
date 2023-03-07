@@ -143,25 +143,25 @@ def modificar():
             cambio=input("Introduce la característica que desea modificar: ")
             if cambio.lower()=="nombre":
                 nom=input("Nombre nuevo: ")
-                pokemon._nombre=nom
+                pokemon.set_nombre(nom)
             elif cambio.lower()=="localizacion":
                 locali=input("Localización nueva: ")
-                
+                pokemon.set_nombre(locali)
             elif cambio.lower()=="tipo":
                 tip=input("Tipo nuevo: ")
-                
+                pokemon.set_nombre(tip)
             elif cambio.lower()=="evolucion":
                 evolu=input("Evolución nueva: ")
-                
+                pokemon.set_nombre(evolu)
             elif cambio.lower()=="nivel":
                 nive=input("Nivel nuevo: ")
-                
+                pokemon.set_nombre(nive)
             elif cambio.lower()=="elemento":
                 ele=input("Elemento nuevo: ")
-                
+                pokemon.set_nombre(ele)
             elif cambio.lower()=="elemento secundario":
                 sele=input("Elemento secundario nuevo: ")
-                
+                pokemon.set_nombre(sele)
             break
     if comprobar==False:
         print("Pokemon no encontrado en la pokedex.")
