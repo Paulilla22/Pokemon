@@ -140,34 +140,43 @@ def modificar():
     for pokemon in pokedex:
         if pokemon.get_nombre() == nombre_pokemon:
             comprobar=True
+            print("Nombre pulse 1")
+            print("Localización pulse 2")
+            print("Tipo pulse 3")
+            print("Evolución pulse 4")
+            print("Nivel pulse 5")
+            print("Elemento pulse 6")
+            print("Elemento secundario pulse 7")
             cambio=input("Introduce la característica que desea modificar: ")
-            if cambio.lower()=="nombre":
+            if cambio=="1":
                 nom=input("Nombre nuevo: ")
                 pokemon.set_nombre(nom)
-            elif cambio.lower()=="localizacion":
+            elif cambio=="2":
                 locali=input("Localización nueva: ")
                 pokemon.set_localizacion(locali)
-            elif cambio.lower()=="tipo":
+            elif cambio=="3":
                 tip=input("Tipo nuevo: ")
                 pokemon.set_tipo(tip)
-            elif cambio.lower()=="evolucion":
+            elif cambio=="4":
                 evolu=input("Evolución nueva: ")
                 pokemon.set_evolucion(evolu)
-            elif cambio.lower()=="nivel":
+            elif cambio=="5":
                 nive=input("Nivel nuevo: ")
                 pokemon.set_nivel(nive)
-            elif cambio.lower()=="elemento":
+            elif cambio=="6":
                 if pokemon.get_cantidad()=="1" or pokemon.get_cantidad()=="2":
                     ele=input("Elemento nuevo: ")
                     pokemon.set_elemento(ele)
                 else:
                     print("Este pokemon no tiene esta característica")
-            elif cambio.lower()=="elemento secundario":
+            elif cambio=="7":
                 if pokemon.get_cantidad()=="2":
                     sele=input("Elemento secundario nuevo: ")
                     pokemon.set_secundario(sele)
                 else:
                     print("Este pokemon no tiene esta característica")
+            else:
+                print("Esta característica no existe")
             break
     if comprobar==False:
         print("Pokemon no encontrado en la pokedex.")
@@ -178,22 +187,20 @@ if __name__=="__main__":
     pokedex=[]
     x="o"
     while x!="6" :
-         print("Si quiere añadir un pokemon pulse 1")
-         print("Si quiere buscar la información de un pokemon pulse 2")
-         print("Si quiere eliminar un pokemon pulse 3")
-         print("Para ver todos mis pokemon pulse 4")
-         print("Para modificar los datos de algún pokemon pulse 5")
-         print("Para salir de la Pokedex pulse 6")
-         x=input("Introduce: ")
-         if x=="1":
-             agregar_pokemon()
-         elif x=="2":
-             buscador()
-         elif x=="3":
-             eliminar()
-         elif x=="4":
-             mostrar_pokemon()
-         elif x=="5":
-             modificar()
-             
-     
+        print("Si quiere añadir un pokemon pulse 1")
+        print("Si quiere buscar la información de un pokemon pulse 2")
+        print("Si quiere eliminar un pokemon pulse 3")
+        print("Para ver todos mis pokemon pulse 4")
+        print("Para modificar los datos de algún pokemon pulse 5")
+        print("Para salir de la Pokedex pulse 6")
+        x=input("Introduce: ")
+        if x=="1":
+            agregar_pokemon()
+        elif x=="2":
+            buscador()
+        elif x=="3":
+            eliminar()
+        elif x=="4":
+            mostrar_pokemon()
+        elif x=="5":
+            modificar()
